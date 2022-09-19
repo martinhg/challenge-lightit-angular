@@ -1,0 +1,45 @@
+<aside class="h-[88vh] w-24 shadow-md bg-white px-1 absolute flex items-center justify-center">
+  <ul class="relative w-16 flex flex-col items-center justify-center">
+    <li class="relative">
+      <button class="my-5 hover:bg-gray-100 transition duration-300 ease-in-out flex flex-col items-center justify-center" (click)="openNav('aberturas')">
+        <img class="h-10" src="../../../assets/Aberturas.png" />
+        <span class="text-xs">Aberturas</span>
+      </button>
+    </li>
+
+    <li class="relative">
+      <button class="my-5 hover:bg-gray-100 transition duration-300 ease-in-out flex flex-col items-center justify-center" (click)="openNav('equipamiento')">
+        <img class="h-10" src="../../../assets/Equipamiento.png" />
+        <span class="text-xs">Equipamiento</span>
+      </button>
+    </li>
+
+    <li class="relative">
+      <button class="my-5 h-10 hover:bg-gray-100 transition duration-300 ease-in-out flex flex-col items-center justify-center" (click)="openNav('terminaciones')">
+        <img class="h-10" src="../../../assets/Terminaciones.png" />
+        <span class="text-xs">Terminaciones</span>
+      </button>
+    </li>
+  </ul>
+</aside>
+
+<div #submenu class="sidenav fixed h-[88vh] bottom-0 left-[96px] overflow-x-hidden pt-[60px] duration-300">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <ng-container *ngIf=showOptions>
+  <div class="" *ngFor="let category of categories">
+    <button (click)="getItems(category.name)" class="flex flex-row items-center justify-between bg-white rounded-lg h-12 w-[370px] mx-3 text-left font-light pl-3 mb-3" >
+      <span>{{ category?.name }}</span>
+      <img class="h-6 pr-4 rotate-180" src="../../../assets/activo.png" />
+    </button>
+  </div>
+</ng-container>
+
+  <ng-container *ngIf="!showOptions">
+  <div class="columns-3" >
+      <div class="gap-8 flex flex-col items-center" *ngFor="let item of items">
+        <img class="h-28" [src]="item?.img" alt="">
+        <span>{{ item?.name }}</span>
+      </div>
+  </div>
+</ng-container>
+</div>

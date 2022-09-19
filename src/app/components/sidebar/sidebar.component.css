@@ -1,0 +1,16 @@
+.sidenav {
+  width: 0;
+  background-color: #f7f7f7;
+}
+
+.sidenav button {
+  text-decoration: none;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}

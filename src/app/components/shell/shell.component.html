@@ -1,0 +1,51 @@
+<div class="max-h-screen">
+    <app-header></app-header>
+
+  <div class="flex flex-row">
+    <app-sidebar></app-sidebar>
+
+    <div>
+      <div class="flex flex-row absolute right-12 top-70 py-10">
+        <button
+          class="mr-5 bg-white rounded-lg h-12 w-24"
+          (click)="showMessage('Fijar')"
+        >
+          Fijar
+        </button>
+        <button
+          class="bg-white rounded-lg h-12 w-24"
+          (click)="showMessage('Borrar')"
+        >
+          Borrar
+        </button>
+      </div>
+
+      <div class="flex flex-row items-center absolute right-12 bottom-5">
+        <div class="flex flex-col m-7 bg-white rounded-lg p-2">
+          <button (click)="showMessage('+')">
+            <img class="h-7" src="../../../assets/+.png" />
+          </button>
+          <button (click)="showMessage('-')">
+            <img class="h-7" src="../../../assets/-.png" />
+          </button>
+        </div>
+        <div class="flex flex-col items-center bg-white rounded-lg p-2">
+          <button class="h-5" (click)="showMessage('Up')">
+            <img class="h-7" src="../../../assets/Flecha.png" />
+          </button>
+          <div class="h-6">
+            <button class="rotate-[270deg] p-1" (click)="showMessage('Lef')">
+              <img class="h-7" src="../../../assets/Flecha.png" />
+            </button>
+            <button class="rotate-90 p-1" (click)="showMessage('Right')">
+              <img class="h-7" src="../../../assets/Flecha.png" />
+            </button>
+          </div>
+          <button class="rotate-180 p-1" (click)="showMessage('Down')">
+            <img class="h-7" src="../../../assets/Flecha.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
